@@ -1,0 +1,1 @@
+waf_web_acl_arn ="arn:aws:wafv2:us-east-1:531191359441:global/webacl/CreatedByCloudFront-810755e3-5e54-4ad8-9edb-c42632d7217d/e84343c1-fdf8-44ab-a043-b24822802c90"
