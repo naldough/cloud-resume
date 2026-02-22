@@ -3,17 +3,27 @@ name: Upload website to S3
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
+
       - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --delete --exclude ".git/*" --exclude ".github/*" --exclude "infra/*" --exclude "**/.terraform/*" --exclude "**/*.tf" --exclude "**/*.tfstate*"
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: '.' #make sure the SOURCE_DIR is the correct name
+          SOURCE_DIR: '.'
+
+      - name: Invalidate CloudFront
+        run: aws cloudfront create-invalidation --distribution-id E21HR5847RNPBK --paths "/*"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
