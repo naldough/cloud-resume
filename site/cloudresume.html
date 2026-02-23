@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Cloud Resume Challenge | Ronaldo Pardieu</title>
+  <meta content="My implementation of the Cloud Resume Challenge using AWS services like S3, CloudFront, Route 53, Lambda, API Gateway, DynamoDB, and CI/CD." name="description">
+  <meta content="AWS, Cloud Resume Challenge, S3, CloudFront, Route 53, Lambda, API Gateway, DynamoDB, Terraform, GitHub Actions, CI/CD" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Mobile nav toggle -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Ronaldo Pardieu</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://github.com/naldough" class="github" target="_blank"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/ronaldopardieu/" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index.html#hero" class="nav-link"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="index.html#about" class="nav-link"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="index.html#resume" class="nav-link"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="index.html#portfolio" class="nav-link"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="index.html#skills" class="nav-link"><i class="bx bx-server"></i> <span>Skills</span></a></li>
+          <li><a href="index.html#contact" class="nav-link"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- Breadcrumbs -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Portfolio Details</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Cloud Resume Challenge</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- Portfolio Details -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- Left: Images -->
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-1-1.jpg" alt="Cloud Resume Challenge site overview">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-1-2.jpg" alt="AWS infrastructure / services screenshot">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-1-3.jpg" alt="Visitor counter / backend screenshot">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="mt-4">
+              <div class="alert alert-light" role="alert">
+                <strong>Tip:</strong> These screenshots are perfect. If you want to level this up later, add a simple architecture diagram and a CI/CD run screenshot.
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Project Info -->
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Cloud Project</li>
+                <li><strong>Project date</strong>: August 2023</li>
+                <li><strong>Status</strong>: Live / Iterating</li>
+                <li><strong>Repo</strong>:
+                  <a href="https://github.com/naldough/cloud-resume" target="_blank">GitHub (cloud-resume)</a>
+                </li>
+                <li><strong>Live Site</strong>:
+                  <a href="https://ronaldoauguste.com" target="_blank">ronaldoauguste.com</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="portfolio-info mt-4">
+              <h3>Tools used</h3>
+              <ul>
+                <li>AWS S3 (static hosting)</li>
+                <li>CloudFront (CDN)</li>
+                <li>Route 53 (DNS)</li>
+                <li>ACM (TLS/HTTPS)</li>
+                <li>Lambda (backend logic)</li>
+                <li>API Gateway / Lambda URL (API)</li>
+                <li>DynamoDB (visitor counter)</li>
+                <li>GitHub Actions (deploy automation)</li>
+                <li>Terraform (IaC, ongoing)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <div class="portfolio-description">
+              <h2>Cloud Resume Challenge (AWS)</h2>
+
+              <p>
+                Built and deployed my portfolio website as part of the <strong>Cloud Resume Challenge</strong>, a hands-on project
+                designed to prove real-world AWS skills beyond certifications. The site is served securely over HTTPS, distributed
+                globally via a CDN, and backed by a serverless visitor counter.
+              </p>
+
+              <h4>Core goals</h4>
+              <ul>
+                <li><strong>Production-style hosting:</strong> fast, cached, and HTTPS-enabled via CloudFront + ACM</li>
+                <li><strong>Serverless backend:</strong> a visitor counter powered by Lambda + DynamoDB</li>
+                <li><strong>Real DevOps workflow:</strong> updates deploy through GitHub-based automation</li>
+                <li><strong>Infrastructure discipline:</strong> reduce “click-ops drift” by capturing infra in code over time</li>
+              </ul>
+
+              <h4>How it works</h4>
+              <ul>
+                <li><strong>Frontend:</strong> static website files hosted in S3</li>
+                <li><strong>CDN + HTTPS:</strong> CloudFront distribution with ACM certificate (us-east-1)</li>
+                <li><strong>DNS:</strong> Route 53 A/AAAA aliases for apex + www</li>
+                <li><strong>Counter API:</strong> JavaScript calls a backend endpoint that returns updated view count</li>
+                <li><strong>Database:</strong> DynamoDB stores and increments the counter</li>
+              </ul>
+
+              <h4>Notable engineering decisions</h4>
+              <ul>
+                <li>Designed for <strong>low cost</strong> and <strong>high reliability</strong> using serverless services</li>
+                <li>Kept the site <strong>cache-friendly</strong> and used invalidations when needed</li>
+                <li>Separated “website deployment” from “infrastructure changes” to keep updates safe</li>
+              </ul>
+
+              <h4>Next upgrades</h4>
+              <ul>
+                <li>Add WAF rules and logging refinement (security + observability)</li>
+                <li>Improve CI/CD: linting, link checks, and build validation before deploy</li>
+                <li>Terraform hardening: modules, environments, and drift detection patterns</li>
+              </ul>
+
+              <hr>
+
+              <h4>Quick summary</h4>
+              <p>
+                A live AWS-hosted portfolio demonstrating practical cloud and DevOps fundamentals: S3 + CloudFront + Route 53 + serverless backend + automated deployment.
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details -->
+
+  </main><!-- End main -->
+
+  <footer id="footer">
+    <div class="container">
+      <div class="credits"></div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
