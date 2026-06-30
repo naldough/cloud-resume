@@ -124,8 +124,8 @@ locals {
 }
 
 resource "aws_cloudfront_distribution" "cdn" {
-  enabled         = true
-  is_ipv6_enabled = true
+  enabled             = true
+  is_ipv6_enabled     = true
   default_root_object = "index.html"
 
   web_acl_id = var.waf_web_acl_arn

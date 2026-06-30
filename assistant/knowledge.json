@@ -1,0 +1,112 @@
+{
+  "person": {
+    "name": "Ronaldo Pardieu",
+    "location": "Boston, MA",
+    "email": "naldo617@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ronaldopardieu/",
+    "github": "https://github.com/naldough",
+    "summary": "Cloud-focused IT professional with hands-on experience supporting enterprise systems and building cloud infrastructure using AWS and Terraform. Currently working as a Help Desk Analyst while actively building cloud engineering skills, with the goal of transitioning into a Cloud DevOps engineering role.",
+    "education": [
+      {
+        "degree": "Bachelor of Science, Computer Science",
+        "school": "Bridgewater State University, Bridgewater, MA",
+        "dates": "2021 - 2023"
+      },
+      {
+        "degree": "Associate of Science, Liberal Arts",
+        "school": "Massasoit Community College, Brockton, MA",
+        "dates": "2019 - 2021"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "title": "Help Desk II",
+      "company": "Hebrew SeniorLife",
+      "location": "Boston, MA",
+      "dates": "January 2024 - Present",
+      "highlights": [
+        "Provides Tier 2 support to 2,600+ users, troubleshooting hardware, software, and Citrix-related issues across multiple sites",
+        "Images, deploys, and maintains PCs, laptops, thin clients, and printers, ensuring proper system upgrades and repairs",
+        "Administers user accounts and permissions in Active Directory, including password resets and account terminations",
+        "Acts as an escalation point for junior staff, providing technical guidance on critical IT issues",
+        "Troubleshoots and resolves issues with Citrix-based systems, remote connectivity, and local network issues"
+      ]
+    },
+    {
+      "title": "Cloud Engineer Intern",
+      "company": "Bain & Company",
+      "location": "Boston, MA",
+      "dates": "June 2022 - August 2022",
+      "highlights": [
+        "Developed reusable Terraform modules to provision cloud resources across multiple environments",
+        "Implemented CI/CD workflows using GitHub Actions and pre-commit to enforce security and code consistency",
+        "Built and tested env0 deployment templates to standardize infrastructure provisioning",
+        "Worked in an Agile Scrum environment, tracking progress via Jira stories and sprint reviews",
+        "Identified and decommissioned unused cloud resources, reducing costs by approximately $20K annually"
+      ]
+    },
+    {
+      "title": "Software Engineering Fellow",
+      "company": "Hack.Diversity",
+      "location": "Boston, MA",
+      "dates": "January 2022 - August 2022",
+      "highlights": [
+        "Selected from a competitive pool of ~200 applicants for a technical fellowship focused on software engineering and professional development",
+        "Led operations for a team-based software engineering project, coordinating tasks and deliverables across team members",
+        "Strengthened skills in collaboration, Agile methodologies, and full-stack development practices"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "verify_url": "https://www.credly.com/badges/44077880-ae18-4e45-a081-bec535e7f636/public_url"
+    },
+    {
+      "name": "AWS Certified Solutions Architect - Associate",
+      "issuer": "Amazon Web Services",
+      "verify_url": "https://www.credly.com/badges/16458e3e-5a88-4020-985e-d2b5fa22683d/public_url"
+    }
+  ],
+  "skills": {
+    "aws": ["S3", "CloudFront", "Route 53", "Lambda", "API Gateway", "DynamoDB", "IAM", "ACM", "WAF"],
+    "other_cloud": ["Google Cloud (Foundations)"],
+    "languages": ["Go", "Java", "Python"],
+    "iac_and_cicd": ["Terraform", "GitHub Actions"]
+  },
+  "projects": [
+    {
+      "name": "Cloud Resume Challenge",
+      "dates": "August 2023 - present (live, iterating)",
+      "url": "https://ronaldoauguste.com",
+      "repo": "https://github.com/naldough/cloud-resume",
+      "description": "Ronaldo's personal portfolio and resume site, built as part of the Cloud Resume Challenge to demonstrate real-world AWS skills beyond certifications. The site is a fully serverless static application: S3 for storage, CloudFront as the CDN, Route 53 for DNS, ACM for the TLS certificate, and AWS WAF in front of CloudFront. Infrastructure is defined in Terraform with remote state in S3 and locking via DynamoDB, and deploys run through GitHub Actions.",
+      "technologies": ["S3", "CloudFront", "Route 53", "ACM", "AWS WAF", "Terraform", "GitHub Actions", "DynamoDB"]
+    },
+    {
+      "name": "COVID Reporting Web Application",
+      "dates": "January 2022 - February 2022",
+      "repo": "https://github.com/naldough/cachemoney",
+      "role": "SWE Operations Team Lead",
+      "description": "A full-stack MERN application for healthcare professionals to submit and review structured radiology reports for COVID-19 patient exams. Ronaldo led the SWE Operations team, coordinated engineering efforts, designed backend data workflows, and supported frontend development.",
+      "technologies": ["React", "Node.js", "MongoDB", "REST APIs"]
+    },
+    {
+      "name": "DevOps Lab",
+      "dates": "Active / ongoing",
+      "repo": "https://github.com/naldough/devops-lab",
+      "description": "A hands-on lab for practicing production DevOps workflows: repeatable infrastructure, automated deployments, and troubleshooting environments. Includes CI/CD pipelines that lint, test, build, and deploy; Terraform-managed infrastructure with remote state; and separate dev/stage/prod environments.",
+      "technologies": ["Git", "GitHub Actions", "Terraform", "AWS (S3, CloudFront, EC2)", "Linux", "Bash", "Docker"]
+    },
+    {
+      "name": "Porcupine Open-Source Contributions",
+      "dates": "March 2023 - May 2023",
+      "repo": "https://github.com/naldough/porcupine",
+      "description": "Open-source contributions to Porcupine, a Python/Tkinter code editor, fixing real GitHub issues: added a Restart action to the File menu, added a safeguard against accidentally closing the app with unsaved tabs open, fixed the Filetypes menu disappearing when a tab is popped into a new window, and implemented folder duplication inside the IDE.",
+      "technologies": ["Python", "Tkinter", "Git/GitHub issue & PR workflow"]
+    }
+  ],
+  "cloud_resume_challenge_general_info": "The Cloud Resume Challenge is a well-known hands-on project (created by Forrest Brazeal) where participants build and deploy a personal resume website using real cloud infrastructure, then document the build publicly. It typically involves: a static frontend hosted on cloud storage behind a CDN with a custom domain and HTTPS, a serverless backend (often a visitor counter) using a function-as-a-service and a NoSQL database, infrastructure defined as code, and a CI/CD pipeline that deploys on every commit. It's used as a portfolio piece to demonstrate practical cloud skills to employers."
+}

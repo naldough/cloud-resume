@@ -9,3 +9,7 @@ output "cloudfront_domain" {
 output "cloudfront_distribution_id" {
   value = aws_cloudfront_distribution.cdn.id
 }
+
+output "assistant_api_endpoint" {
+  value = "https://${aws_apigatewayv2_domain_name.assistant.domain_name}/chat"
+}

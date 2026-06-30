@@ -2,7 +2,6 @@
 key.json
 # Terraform
 **/.terraform/*
-**/.terraform.lock.hcl
 **/*.tfstate
 **/*.tfstate.*
 **/crash.log
@@ -10,6 +9,9 @@ key.json
 **/*.tfvars
 **/*.tfvars.json
 **/*.tfplan
+**/.build/
+__pycache__/
+*.pyc
 .DS_Store
 Thumbs.db
 .vscode/
