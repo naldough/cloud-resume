@@ -1,5 +1,0 @@
-@'
-{
-  "LockID": { "S": "test" }
-}
-'@ | Set-Content -Encoding utf8 key.json

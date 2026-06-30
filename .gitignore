@@ -1,4 +1,5 @@
 /secrets
+key.json
 # Terraform
 **/.terraform/*
 **/.terraform.lock.hcl
