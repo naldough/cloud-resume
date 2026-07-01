@@ -21,7 +21,7 @@
   function init() {
     var root = el("div", "resume-assistant");
 
-    var toggle = el("button", "resume-assistant__toggle", "Ask AI");
+    var toggle = el("button", "resume-assistant__toggle", "Ask Ronaldo");
     toggle.type = "button";
     toggle.setAttribute("aria-label", "Open resume assistant");
 
