@@ -48,7 +48,7 @@ def _get_api_key():
     global _api_key_cache
     if _api_key_cache is None:
         resp = _secrets_client.get_secret_value(SecretId=SECRET_ARN)
-        _api_key_cache = resp["SecretString"]
+        _api_key_cache = resp["SecretString"].strip()
     return _api_key_cache
 
 
@@ -151,10 +151,10 @@ def handler(event, context):
     try:
         reply = _call_anthropic(message)
     except urllib.error.HTTPError as exc:
-        print(f"anthropic call failed: {exc.code} {exc.read()}")
+        print(f"anthropic call failed: HTTP {exc.code}")
         return _response(502, {"error": "assistant is temporarily unavailable"}, origin)
     except Exception as exc:  # noqa: BLE001
-        print(f"anthropic call failed: {exc}")
+        print(f"anthropic call failed: {type(exc).__name__}")
         return _response(502, {"error": "assistant is temporarily unavailable"}, origin)
 
     return _response(200, {"reply": reply}, origin)
