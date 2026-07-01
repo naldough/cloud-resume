@@ -214,9 +214,10 @@ resource "aws_apigatewayv2_api_mapping" "assistant" {
 }
 
 resource "aws_route53_record" "assistant_api" {
-  zone_id = data.aws_route53_zone.primary.zone_id
-  name    = "${var.assistant_subdomain}.${var.domain_name}"
-  type    = "A"
+  zone_id         = data.aws_route53_zone.primary.zone_id
+  name            = "${var.assistant_subdomain}.${var.domain_name}"
+  type            = "A"
+  allow_overwrite = true
 
   alias {
     name                   = aws_apigatewayv2_domain_name.assistant.domain_name_configuration[0].target_domain_name
@@ -225,45 +226,6 @@ resource "aws_route53_record" "assistant_api" {
   }
 }
 
-# --- WAF: rate-limit the API (separate regional ACL from CloudFront's) ---
-resource "aws_wafv2_web_acl" "assistant_api" {
-  name  = "cloud-resume-assistant-api"
-  scope = "REGIONAL"
-
-  default_action {
-    allow {}
-  }
-
-  rule {
-    name     = "rate-limit-per-ip"
-    priority = 1
-
-    action {
-      block {}
-    }
-
-    statement {
-      rate_based_statement {
-        limit              = 100
-        aggregate_key_type = "IP"
-      }
-    }
-
-    visibility_config {
-      cloudwatch_metrics_enabled = true
-      metric_name                = "assistant-rate-limit"
-      sampled_requests_enabled   = true
-    }
-  }
-
-  visibility_config {
-    cloudwatch_metrics_enabled = true
-    metric_name                = "assistant-api-waf"
-    sampled_requests_enabled   = true
-  }
-}
-
-resource "aws_wafv2_web_acl_association" "assistant_api" {
-  resource_arn = aws_apigatewayv2_stage.assistant.arn
-  web_acl_arn  = aws_wafv2_web_acl.assistant_api.arn
-}
+# WAFv2 AssociateWebACL does not support API Gateway HTTP APIs (v2) — only
+# REST APIs (v1), ALBs, and AppSync. Rate limiting is handled by the API
+# Gateway stage throttle settings and the DynamoDB per-IP check in the Lambda.
